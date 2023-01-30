@@ -1,0 +1,102 @@
+
+@keyframes load-spinner-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes load-spinner-growth {
+  0% {
+    transform: translateX(-4px);
+  }
+
+  100% {
+    transform: translateX(52px);
+  }
+}
+
+@keyframes load-spinner-growth-segment-1 {
+  0% {
+    transform: rotate(10deg) skew(80deg);
+  }
+
+  50% {
+    transform: rotate(10deg) skew(-80deg);
+  }
+
+  100% {
+    transform: rotate(10deg) skew(-80deg);
+  }
+}
+
+@keyframes load-spinner-growth-segment-2 {
+  0% {
+    transform: rotate(180deg) skew(90deg);
+  }
+
+  50% {
+    transform: rotate(180deg) skew(90deg);
+  }
+
+  100% {
+    transform: rotate(180deg) skew(-80deg);
+  }
+}
+
+
+@keyframes dot-bob {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  70% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+:host {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.text {
+  margin-top: 8px;
+  // same as $primary-tint in colors
+  color: rgba(165, 36, 22, 0.36);
+}
+
+.dots {
+  span {
+    display: inline-block;
+    // same as $primary in colors
+    background: #a5247a;
+    width: 3px;
+    height: 3px;
+    margin: 0 2px;
+    padding: 0;
+    border-radius: 50%;
+    animation: dot-bob .8s ease-in infinite;
+  }
+
+  .dot-2 {
+    animation-delay: .7s;
+  }
+
+  .dot-3 {
+    animation-delay: 1.3s;
+  }
+}
+

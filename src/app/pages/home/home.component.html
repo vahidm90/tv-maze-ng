@@ -1,0 +1,10 @@
+<div class="home-container" [tvmLoading]="isLoading">
+  <ng-container *ngTemplateOutlet="hasErrors ? fetchErrorTemplate: genresTemplate"></ng-container>
+</div>
+<ng-template #genresTemplate>
+  <tvm-carousel *ngFor="let genre of showsByGenre | keyvalue"
+                            title="{{genre.key}}" [shows]="genre.value"></tvm-carousel>
+</ng-template>
+<ng-template #fetchErrorTemplate>
+  <tvm-fetch-error (retryButtonClick)="updateShows()"></tvm-fetch-error>
+</ng-template>

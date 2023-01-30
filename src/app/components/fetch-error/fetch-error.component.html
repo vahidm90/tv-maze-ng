@@ -1,0 +1,8 @@
+<p class="error">There was a problem fetching the data!</p>
+<ng-container *ngTemplateOutlet="retryButtonClick ? retryButtonTemplate : textTemplate"></ng-container>
+<ng-template #retryButtonTemplate>
+  <button class="retry-error" (click)="onRetryButtonClick()">Try again!</button>
+</ng-template>
+<ng-template #textTemplate>
+  <p class="error-text">Please try again later</p>
+</ng-template>

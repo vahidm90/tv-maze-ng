@@ -1,0 +1,21 @@
+
+<ng-container *ngTemplateOutlet="small ? smallLoadingTemplate : bigLoadingTemplate"></ng-container>
+<ng-template #smallLoadingTemplate>
+  <div class="ellipsis">
+    <div class="dots">
+      <span class="dot-1"></span>
+      <span class="dot-2"></span>
+      <span class="dot-3"></span>
+    </div>
+  </div>
+</ng-template>
+<ng-template #bigLoadingTemplate>
+  <p class="text text-center">{{text || 'Loading...'}}</p>
+  <div class="spinner-box">
+    <div class="outer-circle">
+      <div class="spinner segment"></div>
+      <div class="spinner segment"></div>
+    </div>
+    <div class="inner-circle"></div>
+  </div>
+</ng-template>
