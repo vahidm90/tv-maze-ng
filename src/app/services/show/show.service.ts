@@ -24,18 +24,7 @@ export class ShowService {
     .pipe(tap(list => this.latestShows$.next(list)));
 
   getListByGenre: () => Observable<Partial<TShowByGenre>> =
-    () => this.getList().pipe(
-      map(showList => {
-        const listByGenre: Partial<TShowByGenre> = { Miscellaneous: [] };
-        showList.forEach(show => {
-          if (show.genres.length)
-            show.genres.forEach(genre => listByGenre[genre] = [...(listByGenre[genre] ?? []), show]);
-          else
-            listByGenre.Miscellaneous?.push(show);
-        });
-        return showList.length ? listByGenre : {};
-      })
-    );
+    () => this.getList().pipe(map(showList => UTIL.groupShowsByGenre(showList)));
 
   getShowDetails: (showId: number) => Observable<IShow> =
     showId => this._http.get<IShow>(`${ShowService.url}/${showId}`);
