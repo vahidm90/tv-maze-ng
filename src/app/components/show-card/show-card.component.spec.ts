@@ -1,19 +1,19 @@
 /*
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FetchErrorComponent } from './fetch-error.component';
+import { ShowCardComponent } from './show-card.component';
 
-describe('FetchErrorComponent', () => {
-  let component: FetchErrorComponent;
-  let fixture: ComponentFixture<FetchErrorComponent>;
+describe('ShowCardComponent', () => {
+  let component: ShowCardComponent;
+  let fixture: ComponentFixture<ShowCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FetchErrorComponent ]
+      declarations: [ ShowCardComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FetchErrorComponent);
+    fixture = TestBed.createComponent(ShowCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

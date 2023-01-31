@@ -1,19 +1,19 @@
 /*
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FetchErrorComponent } from './fetch-error.component';
+import { TopBarSearchComponent } from './top-bar-search.component';
 
-describe('FetchErrorComponent', () => {
-  let component: FetchErrorComponent;
-  let fixture: ComponentFixture<FetchErrorComponent>;
+describe('TopBarSearchComponent', () => {
+  let component: TopBarSearchComponent;
+  let fixture: ComponentFixture<TopBarSearchComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FetchErrorComponent ]
+      declarations: [ TopBarSearchComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FetchErrorComponent);
+    fixture = TestBed.createComponent(TopBarSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

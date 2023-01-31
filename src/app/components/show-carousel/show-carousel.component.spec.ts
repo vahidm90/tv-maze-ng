@@ -1,19 +1,19 @@
 /*
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FetchErrorComponent } from './fetch-error.component';
+import { ShowCarouselComponent } from './show-carousel.component';
 
-describe('FetchErrorComponent', () => {
-  let component: FetchErrorComponent;
-  let fixture: ComponentFixture<FetchErrorComponent>;
+describe('ShowCarouselComponent', () => {
+  let component: ShowCarouselComponent;
+  let fixture: ComponentFixture<ShowCarouselComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FetchErrorComponent ]
+      declarations: [ ShowCarouselComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FetchErrorComponent);
+    fixture = TestBed.createComponent(ShowCarouselComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

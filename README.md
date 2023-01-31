@@ -20,6 +20,10 @@ The module provides a loading animation for a better UX in case there's an API c
 Since it comes with its own directive and component and is business-independent, it is used as a module.
 
 
+## Unit Tests
+Some basic unit tests are added at `src/app/services/show/show.service.spec.ts` and `src/app/pages/home/home-page.component.spec.ts` that can be run by typing `npm test` in terminal. 
+A lot of more unit tests can be added.
+
 
 ## Development server
 
