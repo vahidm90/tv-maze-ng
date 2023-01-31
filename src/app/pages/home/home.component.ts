@@ -6,7 +6,7 @@ import { finalize, Subject, takeUntil } from 'rxjs';
 @Component({
   selector: 'tvm-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.sass']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
