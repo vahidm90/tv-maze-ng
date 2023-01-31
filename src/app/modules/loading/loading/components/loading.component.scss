@@ -1,3 +1,4 @@
+@import "./src/assets/styles/colors";
 
 @keyframes load-spinner-rotation {
   0% {
@@ -72,18 +73,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 98%);
+  background-color: rgba(255, 255, 255, 90%);
 }
 
 .text {
-  color: #a5247a;
+  color: $primary-color;
 }
 
 .dots {
   span {
     display: inline-block;
     // same as $primary in colors
-    background: #a5247a;
+    background: $primary-color;
     width: 3px;
     height: 3px;
     margin: 0 2px;
@@ -129,7 +130,7 @@
       position: absolute;
       width: 99em;
       height: 99em;
-      background: #a5247a;
+      background: $primary-color;
       transform-origin: 0 0;
       top: 50%;
       left: 50%;
@@ -158,6 +159,6 @@
     transform: translateX(-50%) translateY(-50%);
     background: #fff;
     border-radius: 50%;
-    box-shadow: inset rgba(165, 36, 22, 0.36) 0 0 3px 2px;
+    box-shadow: inset $primary-color-tint 0 0 3px 2px;
   }
 }

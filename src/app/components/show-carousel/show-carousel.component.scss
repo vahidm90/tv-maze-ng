@@ -1,8 +1,24 @@
-.carousel-container {
-  display: flex;
-  overflow-x: auto;
+@import "./src/assets/styles/colors";
+
+.carousel-wrap {
+  padding: 16px;
+
+  .carousel-title {
+    margin: 16px 0 8px;
+    font-size: 18px;
+    color: $primary-color;
+  }
+  .carousel-container {
+    display: flex;
+    overflow-x: auto;
+
+    .carousel-item:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
 }
 
-.carousel-item:not(:last-child) {
-  margin-right: 8px;
-}
+
+
+
+

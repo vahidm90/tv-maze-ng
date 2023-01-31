@@ -1,6 +1,8 @@
-<h2 *ngIf="title">{{title}}</h2>
-<div class="carousel-container">
-  <div *ngFor="let show of shows" class="carousel-item">
-    <tvm-show-card [show]="show"></tvm-show-card>
+<div class="carousel-wrap">
+  <h5 class="carousel-title" *ngIf="title">{{title}}</h5>
+  <div class="carousel-container">
+    <div *ngFor="let show of shows" class="carousel-item">
+      <tvm-show-card [show]="show"></tvm-show-card>
+    </div>
   </div>
 </div>

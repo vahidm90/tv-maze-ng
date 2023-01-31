@@ -1,5 +1,41 @@
-.show-card {
-  width: 250px;
-  height: 350px;
-  background: 0%/cover no-repeat;
+@import "./src/assets/styles/colors";
+
+.card-link {
+  &, &:hover, &:focus, &:focus-visible {
+    text-decoration: none;
+    color: $primary-color;
+    outline-offset: 0;
+
+    .show-card {
+      width: 250px;
+      height: 350px;
+      background: 0%/cover no-repeat;
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
+      border-radius: 4px;
+
+      .show-title {
+        display: none;
+        margin: 0;
+        width: 100%;
+        padding: 8px;
+        background: linear-gradient(90deg,rgba(255, 255, 255, 0.11), white, rgba(255, 255, 255, 0.11));
+        text-align: center;
+        font-size: 14px;
+      }
+
+    }
+  }
+
+  &:hover, &:focus {
+    .show-card {
+      box-shadow: inset 0 0 10px #ffffff;
+      .show-title {
+        display: block;
+      }
+
+    }
+  }
 }
+

@@ -10,6 +10,8 @@ import { FetchErrorComponent } from './components/fetch-error/fetch-error.compon
 import { LoadingModule } from './modules/loading/loading.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ShowPageComponent } from './pages/show/show-page.component';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { TopBarSearchComponent } from './components/top-bar-search/top-bar-search.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ShowPageComponent } from './pages/show/show-page.component';
     ShowCardComponent,
     HomePageComponent,
     FetchErrorComponent,
-    ShowPageComponent
+    ShowPageComponent,
+    TopBarComponent,
+    TopBarSearchComponent
   ],
   imports: [
     BrowserModule,
