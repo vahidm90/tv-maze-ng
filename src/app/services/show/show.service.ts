@@ -29,4 +29,7 @@ export class ShowService {
       })
     );
 
+  getShowDetails: (showId: number) => Observable<IShow> =
+    (showId) => this._http.get<IShow>(`${BASE_API_URL}/shows/${showId}`);
+
 }

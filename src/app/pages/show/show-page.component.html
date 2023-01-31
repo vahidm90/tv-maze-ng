@@ -1,1 +1,16 @@
-<p>show works!</p>
+<div class="page-wrap" [tvmLoading]="isLoading">
+  <ng-container *ngTemplateOutlet="hasErrors ? errorTemplate : showDetailsTemplate"></ng-container>
+</div>
+<ng-template #errorTemplate>
+  <tvm-fetch-error (retryButtonClick)="updateShowDetails()"></tvm-fetch-error>
+</ng-template>
+<ng-template #showDetailsTemplate>
+  <div *ngIf="showDetails" class="show-details-wrap">
+    <div class="top-banner">
+      <img class="show-img" src="{{showDetails.image.original}}" alt="{{showDetails.name}}" />
+      <h1 class="show-name">{{showDetails.name}}</h1>
+    </div>
+
+
+  </div>
+</ng-template>
