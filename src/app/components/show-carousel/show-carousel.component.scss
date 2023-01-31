@@ -1,0 +1,8 @@
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+}
+
+.carousel-item:not(:last-child) {
+  margin-right: 8px;
+}

@@ -19,7 +19,7 @@ export class ShowService {
     () => this.getList().pipe(
       map(showList => {
         const listByGenre: Partial<TShowByGenre> = { Miscellaneous: [] };
-        showList.forEach(show => {
+        showList.slice(0, 20).forEach(show => {
           if (show.genres.length)
             show.genres.forEach(genre => listByGenre[genre] = [...(listByGenre[genre] ?? []), show]);
           else

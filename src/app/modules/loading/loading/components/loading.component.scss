@@ -66,16 +66,17 @@
   width: 100%;
   height: 100%;
   display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 98%);
 }
 
 .text {
-  margin-top: 8px;
-  // same as $primary-tint in colors
-  color: rgba(165, 36, 22, 0.36);
+  color: #a5247a;
 }
 
 .dots {
@@ -100,3 +101,63 @@
   }
 }
 
+.load-spinner-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.6);
+
+}
+
+.spinner-box {
+  position: relative;
+
+  .outer-circle {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    overflow: hidden;
+    animation: load-spinner-rotation 5s linear infinite;
+
+    .spinner {
+      position: absolute;
+      width: 99em;
+      height: 99em;
+      background: #a5247a;
+      transform-origin: 0 0;
+      top: 50%;
+      left: 50%;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-duration: .6s;
+    }
+
+    .segment:first-child {
+      animation-name: load-spinner-growth-segment-1;
+      animation-timing-function: ease-in;
+    }
+
+    .segment:last-child {
+      animation-name: load-spinner-growth-segment-2;
+      animation-timing-function: ease-out;
+    }
+  }
+
+  .inner-circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 45px;
+    height: 45px;
+    transform: translateX(-50%) translateY(-50%);
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: inset rgba(165, 36, 22, 0.36) 0 0 3px 2px;
+  }
+}

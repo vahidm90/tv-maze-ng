@@ -1,4 +1,4 @@
-<div class="home-container" [tvmLoading]="isLoading">
+<div class="page-wrap" [tvmLoading]="isLoading">
   <ng-container *ngTemplateOutlet="hasErrors ? fetchErrorTemplate: genresTemplate"></ng-container>
 </div>
 <ng-template #genresTemplate>

@@ -4,16 +4,16 @@ import { TShowByGenre } from '../../types/show-by-genre.type';
 import { finalize, Subject, takeUntil } from 'rxjs';
 
 @Component({
-  selector: 'tvm-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'tvm-home-page',
+  templateUrl: './home-page.component.html',
+  styleUrls: ['./home-page.component.scss']
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomePageComponent implements OnInit, OnDestroy {
 
   showsByGenre!: TShowByGenre;
   isLoading = true;
   hasErrors = false;
-  destroy$ = new Subject<void>();
+  private _destroy$ = new Subject<void>();
 
   constructor(private _showService: ShowService) {
   }
@@ -23,15 +23,15 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.destroy$.next();
-    this.destroy$.complete();
+    this._destroy$.next();
+    this._destroy$.complete();
   }
 
   updateShows: () => void = () => {
     this.isLoading = true;
     this.hasErrors = false;
     this._showService.getListByGenre()
-      .pipe(takeUntil(this.destroy$), finalize(() => this.isLoading = false))
+      .pipe(takeUntil(this._destroy$), finalize(() => this.isLoading = false))
       .subscribe({
         next: listByGenre => this.showsByGenre = listByGenre as TShowByGenre,
         error: (_: unknown) => this.hasErrors = true

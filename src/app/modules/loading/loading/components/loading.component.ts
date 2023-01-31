@@ -9,7 +9,7 @@ export class LoadingComponent {
 
   @Input()
   set isVisible(value: boolean) {
-    this.display = value ? 'initial' : 'none';
+    this.display = value ? 'flex' : 'none';
   }
 
   @Input()
@@ -24,7 +24,7 @@ export class LoadingComponent {
 
 
   @HostBinding('style.display')
-  display: 'none' | 'initial' = 'none';
+  display: 'none' | 'flex' = 'none';
   text: string = '';
   small: boolean = false;
 
