@@ -17,7 +17,6 @@ export class ShowPageComponent implements OnInit, OnDestroy {
   hasErrors: boolean = false;
   showDetails!: IShow;
   showId!: number;
-  src!: string;
 
   private _destroy$ = new Subject<void>();
 
@@ -40,10 +39,7 @@ export class ShowPageComponent implements OnInit, OnDestroy {
     this._showService.getShowDetails(this.showId)
       .pipe(takeUntil(this._destroy$), finalize(() => this.isLoading = false))
       .subscribe({
-        next: showDetails => {
-          this.showDetails = showDetails;
-          this.src = showDetails.image?.original || DEFAULT_IMAGE;
-        },
+        next: showDetails => this.showDetails = showDetails,
         error: (_: unknown) => this.hasErrors = true
       });
 

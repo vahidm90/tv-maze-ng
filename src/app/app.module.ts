@@ -14,6 +14,7 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { TopBarSearchComponent } from './components/top-bar-search/top-bar-search.component';
 import { FormsModule } from '@angular/forms';
 import { SearchPageComponent } from './pages/search/search-page.component';
+import { ShowDetailsComponent } from './components/show-details/show-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SearchPageComponent } from './pages/search/search-page.component';
     ShowPageComponent,
     TopBarComponent,
     TopBarSearchComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    ShowDetailsComponent
   ],
   imports: [
     BrowserModule,

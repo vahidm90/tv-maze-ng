@@ -23,7 +23,10 @@ export class TopBarSearchComponent {
       this._router.navigate(['.', 'search'], {
         queryParams: { [SHOW_SEARCH_QUERY_PARAM_NAME]: sanitizedTerm }
       })
-        .then(() => this.input = '');
+        .then(() => {
+          this.input = '';
+          this.showInput = false;
+        });
     }
   };
 }

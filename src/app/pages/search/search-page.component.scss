@@ -9,7 +9,7 @@
     .result-cards {
       display: flex;
       width: 100%;
-      justify-content: space-between;
+      justify-content: space-evenly;
       flex-wrap: wrap;
       & > * {
         margin: 8px 0;

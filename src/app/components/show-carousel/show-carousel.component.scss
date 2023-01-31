@@ -1,16 +1,18 @@
 @import "./src/assets/styles/colors";
 
 .carousel-wrap {
-  padding: 16px;
 
   .carousel-title {
+    padding: 0 16px;
     margin: 16px 0 8px;
     font-size: 18px;
     color: $primary-color;
   }
   .carousel-container {
+    padding: 16px;
     display: flex;
     overflow-x: auto;
+    background: linear-gradient(90deg, #00000014, transparent, #00000014);
 
     .carousel-item:not(:last-child) {
       margin-right: 16px;

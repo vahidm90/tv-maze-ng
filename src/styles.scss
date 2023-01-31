@@ -22,3 +22,10 @@ body, html {
     outline-offset: 0;
   }
 }
+
+.plain-list {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+}
+
