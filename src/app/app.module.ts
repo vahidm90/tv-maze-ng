@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ShowPageComponent } from './pages/show/show-page.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { TopBarSearchComponent } from './components/top-bar-search/top-bar-search.component';
+import { FormsModule } from '@angular/forms';
+import { SearchPageComponent } from './pages/search/search-page.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { TopBarSearchComponent } from './components/top-bar-search/top-bar-searc
     FetchErrorComponent,
     ShowPageComponent,
     TopBarComponent,
-    TopBarSearchComponent
+    TopBarSearchComponent,
+    SearchPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     LoadingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -25,7 +25,7 @@ export interface IShow {
   webChannel: INetwork | null;
   dvdCountry: ICountry | null;
   externals: { tvrage: number; thetvdb: number | null; imdb: string | null; };
-  image: { medium: string; original: string; };
+  image: { medium: string; original: string; } | null;
   summary: string;
   updated: number;
   _links: { self: { href: string; }; previousepisode: { href: string; } }

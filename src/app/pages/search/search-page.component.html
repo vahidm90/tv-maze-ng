@@ -1,0 +1,14 @@
+<div class="page-wrap">
+  <h1>Search Results</h1>
+  <input [(ngModel)]="searchTerm" (keyup)="onInputKeyUp($event)"
+         type="text" placeholder="Show name..." class="search-input">
+  <div *ngIf="results.length else noResults" class="results" [tvmLoading]="isLoading">
+    <p class="hint">Showing results for "{{searchTerm}}"</p>
+    <div class="result-cards">
+      <tvm-show-card *ngFor="let result of results" [show]="result"></tvm-show-card>
+    </div>
+  </div>
+  <ng-template #noResults>
+    <h3>No results match your search query!</h3>
+  </ng-template>
+</div>

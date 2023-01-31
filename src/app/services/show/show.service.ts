@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { BASE_API_URL } from '../../helpers/api.config';
 import { TShowByGenre } from '../../types/show-by-genre.type';
 import { UTIL } from '../../utils/util';
+import { IShowSearchResult } from '../../interfaces/show-search-result.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -29,11 +30,10 @@ export class ShowService {
   getShowDetails: (showId: number) => Observable<IShow> =
     showId => this._http.get<IShow>(`${ShowService.url}/${showId}`);
 
-  search: (searchTerm: string) => Observable<IShow[]> =
-    (searchTerm) => {
-      const sanitizedTerm = UTIL.sanitizeSearchTerm(searchTerm);
-      this.lastSearchTerm$.next(sanitizedTerm);
-      return this._http.get<IShow[]>(`${ShowService.searchUrl}${sanitizedTerm}`);
-    };
+  search: (searchTerm: string) => Observable<IShow[]> = (searchTerm) => {
+    this.lastSearchTerm$.next(searchTerm);
+    return this._http.get<IShowSearchResult[]>(`${ShowService.searchUrl}${searchTerm}`)
+      .pipe(map(results => results.map(result => result.show)));
+  };
 
 }

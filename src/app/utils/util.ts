@@ -6,7 +6,7 @@ export const UTIL: {
   groupShowsByGenre: (shows: IShow[]) => Partial<TShowByGenre>;
 } = {
   sanitizeSearchTerm: input => {
-    return input.replace(/[\w\s]/g, '').trim();
+    return input.replace(/[^\w\s]/g, '').trim();
   },
   groupShowsByGenre: shows => {
     if (!shows.length) return {};

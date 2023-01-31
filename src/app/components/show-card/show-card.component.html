@@ -1,5 +1,5 @@
-<a class="card-link" title="{{show.name}}" [routerLink]="['/', 'shows', show.id]">
-  <div [style]="{backgroundImage: 'url(' + show.image.medium + ')'}" class="show-card">
+<a class="card-link plain-link" title="{{show.name}}" [routerLink]="['/', 'shows', show.id]">
+  <div [style]="{backgroundImage: backgroundImage}" class="show-card">
     <h6 class="show-title">{{show.name}}</h6>
   </div>
 </a>

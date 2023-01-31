@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { SHOW_PATH_PARAM_NAME } from '../../helpers/route.config';
 import { ShowService } from '../../services/show/show.service';
 import { IShow } from '../../interfaces/show.interface';
+import { DEFAULT_IMAGE } from '../../helpers/default-image.config';
 
 @Component({
   selector: 'tvm-show',
@@ -16,6 +17,7 @@ export class ShowPageComponent implements OnInit, OnDestroy {
   hasErrors: boolean = false;
   showDetails!: IShow;
   showId!: number;
+  src!: string;
 
   private _destroy$ = new Subject<void>();
 
@@ -38,7 +40,10 @@ export class ShowPageComponent implements OnInit, OnDestroy {
     this._showService.getShowDetails(this.showId)
       .pipe(takeUntil(this._destroy$), finalize(() => this.isLoading = false))
       .subscribe({
-        next: showDetails => this.showDetails = showDetails,
+        next: showDetails => {
+          this.showDetails = showDetails;
+          this.src = showDetails.image?.original || DEFAULT_IMAGE;
+        },
         error: (_: unknown) => this.hasErrors = true
       });
 

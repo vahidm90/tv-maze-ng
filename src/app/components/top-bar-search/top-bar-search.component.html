@@ -1,9 +1,20 @@
-<div class="input-wrap">
-  <input type="text" class="search-input" placeholder="show name..." />
-  <div class="suggestions"></div>
+<div class="search-wrap">
+  <div class="small-screen-search">
+    <ng-container *ngIf="showInput" [ngTemplateOutlet]="inputTemplate"></ng-container>
+  </div>
+  <div class="wide-screen-search">
+    <ng-container [ngTemplateOutlet]="inputTemplate"></ng-container>
+  </div>
+  <button class="toggle" (click)="showInput = !showInput">Search</button>
 </div>
 
+
 <ng-template #inputTemplate>
+  <div class="input-wrap">
+    <input type="text" [(ngModel)]="input" (keyup)="onInputKeyUp($event)"
+           class="search-input" placeholder="show name..." />
+    <div *ngIf="showSuggestions" class="suggestions"></div>
+  </div>
 </ng-template>
 <ng-template #suggestionsTemplate>
 

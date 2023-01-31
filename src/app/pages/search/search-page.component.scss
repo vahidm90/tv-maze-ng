@@ -1,0 +1,22 @@
+.page-wrap {
+  padding: 16px;
+
+  .search-input {
+    max-width: 300px;
+  }
+  .results {
+    flex-grow: 1;
+    .result-cards {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      & > * {
+        margin: 8px 0;
+      }
+    }
+
+  }
+
+}
+
