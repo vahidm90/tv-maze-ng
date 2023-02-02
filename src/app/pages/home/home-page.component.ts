@@ -10,7 +10,7 @@ import { finalize, Subject, takeUntil } from 'rxjs';
 })
 export class HomePageComponent implements OnInit, OnDestroy {
 
-  showsByGenre!: Partial<TShowByGenre>;
+  showsByGenre!: TShowByGenre;
   isLoading = true;
   hasErrors = false;
   private _destroy$ = new Subject<void>();
